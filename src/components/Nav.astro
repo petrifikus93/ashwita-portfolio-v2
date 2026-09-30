@@ -1,0 +1,44 @@
+---
+---
+<nav class="nav">
+  <div class="brand">
+    <span class="brand-name">a.design</span>
+    <span class="brand-role">PRODUCT DESIGNER</span>
+  </div>
+  <div class="links">
+    <a href="/">Work</a>
+    <a href="/about">About</a>
+    <a href="/resume.pdf">Resume</a>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg) 0;
+  }
+  .brand { display: flex; flex-direction: column; gap: var(--spacing-2xs); }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--color-text-primary);
+  }
+  .brand-role {
+    font-family: var(--font-label);
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    color: var(--color-text-secondary);
+  }
+  .links { display: flex; gap: var(--spacing-lg); }
+  .links a {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .links a:hover { color: var(--color-text-primary); }
+</style>

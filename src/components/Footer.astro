@@ -1,0 +1,38 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="row">
+    <div>
+      <p class="name">Ashwita Palekar</p>
+      <p class="meta">Product Designer · Launch by NTT DATA · Jersey City, NJ</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="row">
+    <div class="links">
+      <a href="/">Work</a>
+      <a href="/about">About</a>
+      <a href="/resume.pdf">Resume</a>
+    </div>
+    <p class="copyright">© {year} Ashwita Palekar. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-border-default);
+    padding: var(--spacing-xl) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .name { font-size: 20px; margin: 0 0 var(--spacing-2xs); color: var(--color-text-primary); }
+  .meta { font-size: 15px; margin: 0; color: var(--color-text-secondary); }
+  .divider { height: 1px; background: var(--color-border-default); }
+  .links { display: flex; gap: var(--spacing-lg); }
+  .links a { font-size: 15px; color: var(--color-text-secondary); text-decoration: none; }
+  .links a:hover { color: var(--color-text-primary); }
+  .copyright { font-size: 13px; margin: 0; color: var(--color-text-secondary); }
+</style>

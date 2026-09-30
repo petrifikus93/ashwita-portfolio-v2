@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+
+const caseStudies = [
+  {
+    eyebrowTags: ['UX/UI Design', 'User Research'],
+    title: "Scaling marketplace integrations for UPS's eCommerce platform",
+    status: 'Project Under NDA',
+    description:
+      "Transforming fragmented manual processes into a unified identity access management system serving HR's, Admins, Managers and employees across state operations.",
+  },
+  {
+    eyebrowTags: ['UX/UI Design', 'User Research'],
+    title: 'Rebuilding Information Asset Management tool for State of Colorado',
+    status: 'Project Under NDA',
+    description:
+      "Transforming fragmented manual processes into a unified identity access management system serving HR's, Admins, Managers and employees across state operations.",
+  },
+  {
+    eyebrowTags: ['UX/UI Design', 'User Research'],
+    title: 'Advocacy for victims of non-consensual intimate image through Design.',
+    status: 'Project Under NDA',
+    description:
+      'Conducted research with trauma-informed approach to redesign case management systems, enabling caseworkers to deliver critical support to victims of image-based abuse while managing complex workloads.',
+  },
+  {
+    eyebrowTags: ['UX/UI Design', 'User Research'],
+    title: 'Redesigning employee reporting tool for Point32Health',
+    status: 'Project Under NDA',
+    description:
+      'Redesigning decade-old employee management system, untangling complex multi-step workflows into streamlined experiences for reporting and data review.',
+  },
+];
+---
+<BaseLayout>
+  <Nav />
+
+  <section class="hero">
+    <h1>Crafting experiences that Matter</h1>
+    <p class="bio">
+      Hi, I'm Ashwita 👋, a Product Designer at Launch by NTT DATA in Jersey City,
+      working on enterprise, healthcare, and social-impact platforms that support
+      people through meaningful moments. I believe the little things in design are
+      never actually little.
+    </p>
+    <button class="cta">View my work →</button>
+  </section>
+
+  <section class="case-studies">
+    {caseStudies.map((cs) => <CaseStudyCard {...cs} />)}
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-4xl) 0;
+    max-width: 720px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.1;
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+  .bio {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+  .cta {
+    align-self: flex-start;
+    border: 1px solid var(--color-black);
+    background: transparent;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .case-studies {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    padding-bottom: var(--spacing-4xl);
+  }
+</style>

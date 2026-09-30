@@ -1,0 +1,75 @@
+---
+interface Props {
+  eyebrowTags: string[];
+  title: string;
+  status: string;
+  description: string;
+  image?: string;
+}
+const { eyebrowTags, title, status, description, image } = Astro.props as Props;
+---
+<article class="card">
+  <div class="card-body">
+    <div class="tags">
+      {eyebrowTags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+    <h3>{title}</h3>
+    <p class="status">{status}</p>
+    <p class="description">{description}</p>
+    <button class="cta">Case Study</button>
+  </div>
+  {image && (
+    <div class="card-image" style={`background-image: url(${image})`}></div>
+  )}
+</article>
+
+<style>
+  .card {
+    display: flex;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    background: var(--color-bg-surface);
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    flex: 1;
+  }
+  .tags { display: flex; gap: var(--spacing-sm); }
+  .tag {
+    background: var(--color-bg-muted);
+    color: var(--color-text-primary);
+    font-size: 14px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    opacity: 0.8;
+  }
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 28px;
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+  .status { font-family: var(--font-display); font-weight: 500; margin: 0; color: var(--color-text-primary); }
+  .description { color: var(--color-text-secondary); line-height: 1.6; margin: 0; }
+  .cta {
+    align-self: flex-start;
+    border: 1px solid var(--color-black);
+    background: transparent;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .card-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    min-height: 260px;
+  }
+</style>
